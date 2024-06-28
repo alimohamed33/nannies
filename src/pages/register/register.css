@@ -1,0 +1,86 @@
+.register-as {
+  display: grid;
+  place-content: center;
+  height: 100dvh;
+}
+.register-as h4 {
+  font-size: 48px;
+  color: var(--primary-color);
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.register-as a {
+  font-size: 32px;
+  color: var(--seconadry-color);
+  font-weight: 700;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 1rem 5rem;
+  border: 2px solid var(--seconadry-color);
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  transition: var(--main-transition);
+}
+.register-as a:hover {
+  background-color: var(--seconadry-color);
+  color: #fff;
+}
+
+/* register components */
+.register-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.register-section {
+  display: grid;
+  place-content: center;
+}
+
+.register-form {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+.register-form article {
+  width: 100%;
+}
+
+.register-subtitle {
+  color: var(--primary-color);
+  font-size: 32px;
+  text-transform: capitalize;
+  font-weight: 400;
+  text-align: center;
+}
+.register-title {
+  color: var(--primary-color);
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.login-btn {
+  height: 56px;
+  padding: 0 8rem;
+  border-radius: 8px;
+  background-color: var(--seconadry-color);
+  color: #fff;
+  margin: 5rem auto 1rem;
+  text-align: center;
+  display: block;
+  font-size: 18px;
+  width: 100%;
+}
+.toggle-login-register {
+  color: #6178a0;
+  font-size: 20px;
+  text-align: center;
+}
+.toggle-login-register button {
+  color: var(--primary-color);
+  font-size: 22px;
+  font-weight: 600;
+}

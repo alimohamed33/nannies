@@ -1,0 +1,49 @@
+.request-table tbody td .dropdown-container {
+  position: relative;
+}
+.request-table tbody td .dropdown-container .dropdown-selected {
+  color: #fff;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 0.2rem 2rem;
+  text-transform: capitalize;
+  width: 150px;
+  justify-content: center;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: var(--main-transition);
+}
+.request-table tbody td .dropdown-container .dropdown-content {
+  position: absolute;
+  bottom: -6.5rem;
+  left: -4rem;
+  z-index: 9999;
+
+  display: flex;
+  flex-direction: column;
+  align-items: self-end;
+  background-color: #fff;
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  border-radius: 4px;
+  min-width: 100px;
+  width: 150px;
+}
+.request-table tbody td .dropdown-container .dropdown-content .dropdown-item {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--main-font-color);
+}
+.request-table
+  tbody
+  td
+  .dropdown-container
+  .dropdown-content
+  .dorpdown-item:not(:last-child) {
+  border-bottom: 1px solid #dddddd88;
+}

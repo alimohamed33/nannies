@@ -1,0 +1,16 @@
+.info-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+
+  padding: 4rem;
+  background-color: var(--primary-color);
+}
+.info-section p {
+  color: #fff;
+  font-size: 20px;
+  word-spacing: 1px;
+  text-align: center;
+  text-transform: capitalize;
+}

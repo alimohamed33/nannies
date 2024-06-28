@@ -1,0 +1,19 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+
+  height: 100vh;
+  background-color: #133e87;
+}
+.dashboard .section {
+  padding: 60px;
+  background-color: #fff;
+  border-radius: 0 53px 53px 0;
+  height: 100%;
+  overflow-y: scroll;
+}
+.dashboard aside {
+  padding: 60px 0;
+  height: 100%;
+  color: #fff;
+}

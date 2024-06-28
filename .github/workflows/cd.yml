@@ -1,0 +1,26 @@
+name: CD
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  deployment:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout Code Repository
+        uses: actions/checkout@v4
+        with:
+          clean: false
+          ref: main
+
+      - name: Use Node.js 18.18.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.18.0
+
+      - name: Install dependencieds
+        run: npm ci
+
+      - name: Build
+        run: npm run build
