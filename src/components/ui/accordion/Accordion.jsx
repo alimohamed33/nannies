@@ -13,7 +13,7 @@ const Accordion = ({ children, name, image }) => {
       >
         <article className="info">
           <img src={image} alt="image" />
-          <p className="info-name">category</p>
+          <p className="info-name">{name}</p>
         </article>
 
         <button className={`toggle-accordion ${showAccordion ? "active" : ""}`}>

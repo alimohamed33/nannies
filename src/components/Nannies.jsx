@@ -17,11 +17,21 @@ const Nannies = () => {
       const data = await response.json();
 
       console.log(data);
+      setNannies(data);
       setIsLoading(false);
     }
 
     getNannies();
   }, []);
+
+  const deleteNanay = async (id) => {
+    const response = await fetch(
+      `https://careandsafeapp.runasp.net/api/Nannies/${id}`,
+      { method: "delete" }
+    );
+    // const data = await response?.json();
+    // setNannies(data);
+  };
 
   return (
     <>
@@ -42,10 +52,36 @@ const Nannies = () => {
               ...There are no Nannies to display
             </h2>
           ) : (
-            Array.from({ length: 10 })?.map((category, index) => {
+            nannies?.map((nany) => {
               return (
-                <Accordion key={index} image={avatar}>
-                  text
+                <Accordion
+                  key={nany?.nannyId}
+                  name={`${nany?.firstName} ${nany?.lastName}`}
+                  image={nany?.nannyImagePath}
+                >
+                  <div>description: {nany?.description}</div>
+                  <div>phone: {nany?.phone}</div>
+                  <div>price per hour: {nany?.pricePerHour}$</div>
+                  <div>price per day: {nany?.pricePerDaily}$</div>
+
+                  <div style={{ textAlign: "left" }}>
+                    <button
+                      onClick={() => deleteNanay(nany?.nannyId)}
+                      style={{
+                        display: "block",
+                        padding: "0.5rem 2rem",
+                        borderRadius: "12px",
+                        fontSize: "18px",
+                        background: "red",
+                        width: "fit-content",
+                        marginLeft: "auto",
+                        color: "#fff",
+                        marginBottom: "8px",
+                      }}
+                    >
+                      delete
+                    </button>
+                  </div>
                 </Accordion>
               );
             })

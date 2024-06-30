@@ -13,7 +13,6 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
-  // const user = getUserFromLocalStorage();
   const [isLoaded, setIsLoaded] = useState(true);
   window.addEventListener("load", () => setIsLoaded(false));
 

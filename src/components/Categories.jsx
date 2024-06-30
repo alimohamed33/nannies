@@ -17,6 +17,7 @@ const Categories = () => {
       const data = await response.json();
 
       console.log(data);
+      setCategories(data);
       setIsLoading(false);
     }
 
@@ -42,10 +43,14 @@ const Categories = () => {
               ...There are no categories to display
             </h2>
           ) : (
-            Array.from({ length: 10 })?.map((category, index) => {
+            categories?.map((category) => {
               return (
-                <Accordion key={index} image={avatar}>
-                  text
+                <Accordion
+                  key={category?.id}
+                  name={category?.name}
+                  image={avatar}
+                >
+                  {category?.description}
                 </Accordion>
               );
             })
