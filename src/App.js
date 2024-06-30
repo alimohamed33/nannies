@@ -13,41 +13,21 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
-  const [isLoaded, setIsLoaded] = useState(true);
-  window.addEventListener("load", () => setIsLoaded(false));
+  return (
+    <BrowserRouter>
+      <ToastContainer position="top-center" />
+      <Routes>
+        <Route path="/" element={<Dashboard />}>
+          <Route index element={<Nannies />} />
+          <Route path="nannies" element={<Nannies />} />
+          <Route path="categories" element={<Categories />} />
+        </Route>
 
-  // during the window loading content...
-  if (isLoaded)
-    return (
-      <div className="loading-center" style={{ marginTop: "5rem" }}>
-        <Rings
-          height="300"
-          width="300"
-          color="#FF382C"
-          radius="10"
-          visible={true}
-          ariaLabel="rings-loading"
-        />
-      </div>
-    );
-
-  // when the window finished loading the content
-  if (!isLoaded)
-    return (
-      <BrowserRouter>
-        <ToastContainer position="top-center" />
-        <Routes>
-          <Route path="/" element={<Dashboard />}>
-            <Route index element={<Nannies />} />
-            <Route path="nannies" element={<Nannies />} />
-            <Route path="categories" element={<Categories />} />
-          </Route>
-
-          <Route path="register" element={<Register />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </BrowserRouter>
-    );
+        <Route path="register" element={<Register />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
