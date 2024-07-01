@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import Accordion from "./ui/accordion/Accordion";
-import avatar from "../assets/images/avatar.svg";
+import { useEffect, useState } from 'react';
+import Accordion from './ui/accordion/Accordion';
+import avatar from '../assets/images/avatar.svg';
 
-import { Bars } from "react-loader-spinner";
+import { Bars } from 'react-loader-spinner';
 
 const Nannies = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +12,7 @@ const Nannies = () => {
     setIsLoading(true);
     async function getNannies() {
       const response = await fetch(
-        "https://careandsafeapp.runasp.net/api/Nannies"
+        'https://careandsafeapp.runasp.net/api/Nannies'
       );
       const data = await response.json();
 
@@ -27,7 +27,7 @@ const Nannies = () => {
   const deleteNanay = async (id) => {
     const response = await fetch(
       `https://careandsafeapp.runasp.net/api/Nannies/${id}`,
-      { method: "delete" }
+      { method: 'delete' }
     );
     // const data = await response?.json();
     // setNannies(data);
@@ -47,6 +47,24 @@ const Nannies = () => {
         </div>
       ) : (
         <div className="accordions-container">
+          <div style={{ marginBottom: '1rem ' }}>
+            <button
+              style={{
+                display: 'block',
+                padding: '0.5rem 2rem',
+                borderRadius: '12px',
+                fontSize: '18px',
+                background: 'green',
+                width: 'fit-content',
+                marginLeft: 'auto',
+                color: '#fff',
+                marginBottom: '8px',
+              }}
+            >
+              Add Nany
+            </button>
+          </div>
+
           {nannies?.length === 0 ? (
             <h2 className="not-found-title">
               ...There are no Nannies to display
@@ -64,19 +82,19 @@ const Nannies = () => {
                   <div>price per hour: {nany?.pricePerHour}$</div>
                   <div>price per day: {nany?.pricePerDaily}$</div>
 
-                  <div style={{ textAlign: "left" }}>
+                  <div style={{ textAlign: 'left' }}>
                     <button
                       onClick={() => deleteNanay(nany?.nannyId)}
                       style={{
-                        display: "block",
-                        padding: "0.5rem 2rem",
-                        borderRadius: "12px",
-                        fontSize: "18px",
-                        background: "red",
-                        width: "fit-content",
-                        marginLeft: "auto",
-                        color: "#fff",
-                        marginBottom: "8px",
+                        display: 'block',
+                        padding: '0.5rem 2rem',
+                        borderRadius: '12px',
+                        fontSize: '18px',
+                        background: 'red',
+                        width: 'fit-content',
+                        marginLeft: 'auto',
+                        color: '#fff',
+                        marginBottom: '8px',
                       }}
                     >
                       delete
